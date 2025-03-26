@@ -15,4 +15,11 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  ssr: false,
+  nitro: {
+    preset: "github-pages",
+  },
+  app: {
+    baseURL: "//sun-glitter.github.io/",
+  },
 });
