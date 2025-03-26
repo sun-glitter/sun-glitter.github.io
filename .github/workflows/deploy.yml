@@ -10,6 +10,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - run: corepack enable
@@ -31,3 +33,4 @@ jobs:
           branch: gh-pages
           folder: .output/public
           clean: true
+          token: ${{ secrets.GITHUB_TOKEN }}
